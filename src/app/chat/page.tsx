@@ -1,13 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, TextField, Button, Typography, Paper, CircularProgress } from "@mui/material";
 
-interface Receipt {
-  _id: string;
-  fileName: string;
-  createdAt: string;
-  autoSync: boolean;
-}
 
 const ChatPage: React.FC = () => {
   const [messages, setMessages] = useState<{ text: string; sender: string }[]>([]);
@@ -43,7 +37,7 @@ const ChatPage: React.FC = () => {
     <Box sx={{ width: "100%", maxWidth: 600, margin: "0 auto", padding: "20px", backgroundColor: "#f4f6f9" }}>
       {/* Chat Window Header */}
       <Box sx={{ textAlign: "center", marginBottom: "20px" }}>
-        <Typography variant="h5" sx={{ color: "#333" }}>Math Homework Helper</Typography>
+        <Typography variant="h5" sx={{ color: "#333" }}>Chat Window</Typography>
       </Box>
 
       {/* Chat Messages */}

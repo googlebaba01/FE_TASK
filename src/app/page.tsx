@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 const SplashScreen = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
@@ -65,31 +65,37 @@ const SplashScreen = () => {
             <div className="flex flex-col space-y-4">
               {/* Sign Up with Google */}
               <button className="flex items-center justify-start w-full px-8 py-4 bg-black text-white border-2 border-white font-semibold rounded-lg shadow-lg hover:bg-gray-800 transition duration-300">
-                <img
+                <Image
                   src="/google.svg"
                   alt="Google"
-                  className="w-6 h-6 mr-3"
+                  width={24} // Specify width in pixels (based on w-6 = 24px)
+                  height={24} // Specify height in pixels (based on h-6 = 24px)
+                  className="mr-3" // Retain margin-right from Tailwind
                 />
                 Continue with Google
               </button>
 
               {/* Sign Up with Outlook */}
               <button className="flex items-center justify-start w-full px-8 py-4 bg-black text-white border-2 border-white font-semibold rounded-lg shadow-lg hover:bg-gray-800 transition duration-300">
-                <img
-                  src="/outlook.svg"
-                  alt="Outlook"
-                  className="w-6 h-6 mr-3"
-                />
+                <Image
+                src="/outlook.svg"
+                alt="Outlook"
+                width={24} // Specify width in pixels (based on w-6 = 24px)
+                height={24} // Specify height in pixels (based on h-6 = 24px)
+                className="mr-3" // Retain margin-right from Tailwind
+              />
                 Continue with Outlook
               </button>
 
               {/* Sign Up with Yahoo */}
               <button className="flex items-center justify-start w-full px-8 py-4 bg-black text-white border-2 border-white font-semibold rounded-lg shadow-lg hover:bg-gray-800 transition duration-300">
-                <img
-                  src="/yahoo.svg"
-                  alt="Yahoo"
-                  className="w-6 h-6 mr-3"
-                />
+              <Image
+                src="/yahoo.svg"
+                alt="Yahoo"
+                width={24} // Specify width in pixels (based on w-6 = 24px)
+                height={24} // Specify height in pixels (based on h-6 = 24px)
+                className="mr-3" // Retain margin-right from Tailwind
+              />
                 Continue with Yahoo
               </button>
             </div>

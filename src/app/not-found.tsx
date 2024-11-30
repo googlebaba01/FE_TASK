@@ -1,6 +1,8 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
+
 
 const NotFound: React.FC = () => {
   const router = useRouter();
@@ -20,7 +22,17 @@ const NotFound: React.FC = () => {
 
         {/* Error SVG */}
         <div className="mb-6">
-          <img src="/error.svg" alt="Error" className="mx-auto w-100 h-60" />
+        <Image
+            src="/error.svg"
+            alt="Error"
+            width={500} // Specify the width in pixels (adjust as needed)
+            height={300} // Specify the height in pixels (adjust as needed)
+            className="mx-auto"
+            style={{
+                width: "100%", // Adjusts to the container width
+                height: "auto", // Maintains aspect ratio
+            }}
+            />
         </div>
 
         {/* Go to Home Page Button */}

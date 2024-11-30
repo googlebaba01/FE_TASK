@@ -3,6 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -34,8 +35,8 @@ const SignUp = () => {
 
       alert("Signup successful!");
       router.push("/login");
-    } catch (err: any) {
-      console.error("Signup error:", err.response?.data || err.message);
+    } catch (err) {
+      console.error("Signup error");
       setError("Signup failed. Please check your details and try again.");
     } finally {
       setLoading(false);
@@ -51,11 +52,13 @@ const SignUp = () => {
     <div className="flex items-center justify-center min-h-screen bg-black relative">
       {/* Background Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <img
-          src="/logo.svg"
-          alt="Valet Chat Logo"
-          className="w-40 h-40 mb-4 opacity-10"
-        />
+      <Image
+        src="/logo.svg"
+        alt="Valet Chat Logo"
+        width={160} // Specify width in pixels (w-40 = 160px)
+        height={160} // Specify height in pixels (h-40 = 160px)
+        className="mb-4 opacity-10" // Retain margin-bottom and opacity classes
+      />
         <h1 className="text-4xl font-bold text-white opacity-20 tracking-wide">
           Valet Chat
         </h1>

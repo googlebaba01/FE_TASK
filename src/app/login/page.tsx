@@ -32,8 +32,8 @@ const LogInPage = () => {
 
       alert("Login successful!");
       router.push("/dashboard"); // Redirect to the dashboard page
-    } catch (err: any) {
-      console.error("Login error:", err.response?.data || err.message);
+    } catch (err) {
+      console.error("Login error");
       setError("Login failed. Please check your credentials and try again.");
     } finally {
       setLoading(false);
@@ -140,7 +140,7 @@ const LogInPage = () => {
 
           {/* Sign Up Link */}
           <p className="text-center text-sm text-gray-500 mt-4">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <button
               onClick={() => router.push("/signup")}
               className="text-indigo-600 hover:underline focus:outline-none"

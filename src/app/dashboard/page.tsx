@@ -1,11 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Box,
   Button,
   Typography,
   ToggleButton,
-  ToggleButtonGroup,
   IconButton,
   TextField,
   CircularProgress,
@@ -19,7 +19,6 @@ import {
   Switch,
   Modal,
 } from "@mui/material";
-import { useSwipeable } from "react-swipeable";
 import { Close as CloseIcon } from "@mui/icons-material"; 
 import MenuIcon from "@mui/icons-material/Menu";
 import RefreshIcon from "@mui/icons-material/Refresh";
@@ -483,6 +482,7 @@ const handleUpdate = () => {
       alignItems: "center",
       height: "100vh",
       backgroundColor: "#000",
+      padding: { xs: "20px", sm: "40px", md: "60px" }, // Added padding for larger screens
     }}
   >
     <Box
@@ -490,7 +490,7 @@ const handleUpdate = () => {
         backgroundColor: "#1e1e1e",
         padding: 5,
         borderRadius: 4,
-        maxWidth: "500px",
+        maxWidth: "600px", // Increased max width for larger screens
         width: "100%",
         boxShadow: "0px 12px 35px rgba(0, 0, 0, 0.1)",
         transition: "all 0.3s ease",
@@ -523,14 +523,16 @@ const handleUpdate = () => {
             display: "inline-block",
             borderRadius: "50%",
             overflow: "hidden",
-            width: "120px",
-            height: "120px",
+            width: "150px", // Increased size for desktop
+            height: "150px", // Increased size for desktop
             backgroundColor: "#333",
           }}
         >
-          <img
+          <Image
             src="/profile.png"
             alt="Profile"
+            width={500} // Specify width in pixels
+            height={500} // Specify height in pixels
             style={{
               width: "100%",
               height: "100%",
@@ -657,8 +659,6 @@ const handleUpdate = () => {
     </Box>
   </Box>
 )}
-
-
 
       </Box>
     </Box>
